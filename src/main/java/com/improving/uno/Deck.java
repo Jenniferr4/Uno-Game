@@ -1,5 +1,6 @@
 package com.improving.uno;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
@@ -27,11 +28,23 @@ public class Deck {
         var randomIndex = random.nextInt(cards.size());
         var card = cards.get(randomIndex);
         cards.remove(randomIndex);
-        discard.add(card);
         return card;
     }
 
     public List<Card> getCards() {
         return cards;
     }
+
+    public void shuffle(){
+        Collections.shuffle(discard);
+    }
+
+    public List<Card> getDiscard() {
+        return discard;
+    }
+
+    public Card getTopDiscardCard(){
+        return discard.get(this.discard.size()-1);
+    }
+
 }

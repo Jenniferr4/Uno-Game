@@ -6,8 +6,8 @@ public class Main {
         var hand = new Hand(deck, 7);
         deck.draw();
 
-        
-        System.out.println(hand.getHand().toString());
+
+        System.out.println(hand.getHandCards().toString());
 
     }
 }

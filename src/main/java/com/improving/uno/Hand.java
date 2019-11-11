@@ -4,17 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Hand {
-    private final List<Card> hand;
+    private final List<Card> handCards;
 
     public Hand(Deck deck, int startingHand) {
-        hand = new ArrayList<>();
+        handCards = new ArrayList<>();
         for (int i = 0; i < startingHand; i++) {
-            hand.add(deck.draw());
+            handCards.add(deck.draw());
         }
 
     }
 
-    public List<Card> getHand() {
-        return hand;
+    public List<Card> getHandCards() {
+        return handCards;
+    }
+
+    public Card getTopHandCard(){
+        return handCards.get(0);
     }
 }

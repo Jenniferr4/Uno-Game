@@ -12,7 +12,10 @@ public class Card {
     }
     @Override
     public String toString(){
-        return "" + face.toString() + ""+ color.toString();
+        if(color == null){
+            return "" + face.toString();
+        }
+        return "" + face.toString() + "-" + color.toString();
     }
 
     public Faces getFace() {

@@ -13,7 +13,7 @@ class HandTest {
         var hand = new Hand(deck, 7);
 
         //Act
-        var result = hand.getHand().size();
+        var result = hand.getHandCards().size();
 
                 //Assert
                 assertEquals(7, result);
@@ -26,7 +26,7 @@ class HandTest {
         var hand = new Hand(deck, 7);
 
         //Act
-        var result = hand.getHand().size();
+        var result = hand.getHandCards().size();
         var draw = deck.getCards().size();
 
         //Assert
