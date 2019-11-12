@@ -20,14 +20,15 @@ public class Player {
     }
 
     public void takeTurn(Deck deck) {
-        // TODO: Switch to fori to avoid ConcurrentModificationException
+
         for (Card card : hand.getHandCards()) {
             if (isPlayable(deck, card)) {
                 deck.getDiscard().add(card);
                 getHand().getHandCards().remove(card);
-                break; //TODO: check this again ....
+                return;
             }
-        }
+        }deck.draw();
+
     }
 
 

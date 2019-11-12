@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Hand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Hand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Hand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Hand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +60,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PlayerTest.takeTurn_should_remove_one_card_from_player_hand">
+  <component name="RunManager" selected="JUnit.PlayerTest.takeTurn_should_remove_one_card_from_player_hand_if_playable">
     <configuration name="PlayerTest.isPlayable_should_return_FALSE_when_card_is_not_a_match" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uno" />
       <extension name="coverage">
@@ -96,22 +88,6 @@
       <option name="PACKAGE_NAME" value="com.improving.uno" />
       <option name="MAIN_CLASS_NAME" value="com.improving.uno.PlayerTest" />
       <option name="METHOD_NAME" value="isPlayable_should_return_true_when_draw_4_wild" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlayerTest.isPlayable_should_return_true_when_wild" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uno" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.improving.uno" />
-      <option name="MAIN_CLASS_NAME" value="com.improving.uno.PlayerTest" />
-      <option name="METHOD_NAME" value="isPlayable_should_return_true_when_wild" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,13 +125,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PlayerTest.takeTurn_should_remove_one_card_from_player_hand_if_playable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uno" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.improving.uno.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.improving.uno" />
+      <option name="MAIN_CLASS_NAME" value="com.improving.uno.PlayerTest" />
+      <option name="METHOD_NAME" value="takeTurn_should_remove_one_card_from_player_hand_if_playable" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlayerTest.takeTurn_should_remove_one_card_from_player_hand_if_playable" />
         <item itemvalue="JUnit.PlayerTest.takeTurn_should_remove_one_card_from_player_hand" />
         <item itemvalue="JUnit.PlayerTest.takeTurn_should_add_top_card_to_discard_pile_of_deck" />
         <item itemvalue="JUnit.PlayerTest.isPlayable_should_return_FALSE_when_card_is_not_a_match" />
         <item itemvalue="JUnit.PlayerTest.isPlayable_should_return_true_when_draw_4_wild" />
-        <item itemvalue="JUnit.PlayerTest.isPlayable_should_return_true_when_wild" />
       </list>
     </recent_temporary>
   </component>
