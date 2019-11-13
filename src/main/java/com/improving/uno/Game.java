@@ -51,9 +51,13 @@ public class Game {
                 return true;
             }
         }
-        System.out.println("\n=====Game Over=====\n" +
+        System.out.println(
+                "\n=====Game Over=====\n" +
                 "    Player1 has won");
+        System.out.println();
         return false;
     }
+
+
 
 }

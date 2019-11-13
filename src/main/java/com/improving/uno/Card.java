@@ -15,7 +15,7 @@ public class Card {
         if(color == null){
             return "" + face.toString();
         }
-        return "" + face.toString() + "-" + color.toString();
+        return "" + face.toString() + "-" + color.toString() ;
     }
 
     public Faces getFace() {

@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
