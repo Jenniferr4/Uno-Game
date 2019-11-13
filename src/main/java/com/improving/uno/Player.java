@@ -3,6 +3,7 @@ package com.improving.uno;
 import java.util.List;
 
 public class Player {
+    public static int takeTurnCount =1;
     private Hand hand;
 
     public Player(Deck deck) {
@@ -22,9 +23,11 @@ public class Player {
     }
 
     public void takeTurn(Deck deck) {
+       var ttc = takeTurnCount++;
         for (Card card : hand.getHandCards()) {
             if (isPlayable(deck, card)) {
                 playCard(deck, card);
+                System.out.println("==Human has finished turn ("+ ttc+ ") \n");
                 if (hand.getHandCards().size() == 1) {
                     System.out.println(
                             "\n   -------------\n" +
@@ -39,7 +42,7 @@ public class Player {
         hand.getHandCards().add(pDrewCard);
 
         System.out.println("Human drew a "+ pDrewCard );
-        System.out.println("Human has finished turn \n");
+        System.out.println("==Human has finished turn ("+ ttc+ ") \n");
     }
 
     private void playCard(Deck deck, Card card) {
@@ -52,4 +55,6 @@ public class Player {
     public Hand getHand() {
         return hand;
     }
+
+
 }

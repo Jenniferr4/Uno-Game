@@ -1,6 +1,7 @@
 package com.improving.uno;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Hand {
@@ -21,4 +22,5 @@ public class Hand {
     public Card getTopHandCard(){
         return handCards.get(0);
     }
+
 }
