@@ -3,9 +3,12 @@ package com.improving.uno;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.improving.uno.Game.isPlayable;
+
 public class Player {
     public static int takeTurnCount =1;
     private final List<Card> handCards;
+
 
     public Player(Deck deck) {
         handCards = new ArrayList<>();
@@ -23,15 +26,7 @@ public class Player {
     }
 
 
-    public static boolean isPlayable(Deck deck, Card card) {
-        if (deck.getTopDiscardCard().getColor() == card.getColor() ||
-                deck.getTopDiscardCard().getFace() == card.getFace() ||
-                card.getFace() == Faces.Wild ||
-                card.getFace() == Faces.WildDrawFour) {
-            return true;
-        }
-        return false;
-    }
+
 
     public void takeTurn(Deck deck) {
        var ttc = takeTurnCount++;

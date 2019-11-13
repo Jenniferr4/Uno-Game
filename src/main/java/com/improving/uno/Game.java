@@ -66,5 +66,15 @@ public class Game {
         return player.getHandCards().size();
     }
 
+    public static boolean isPlayable(Deck deck, Card card) {
+        if (deck.getTopDiscardCard().getColor() == card.getColor() ||
+                deck.getTopDiscardCard().getFace() == card.getFace() ||
+                card.getFace() == Faces.Wild ||
+                card.getFace() == Faces.WildDrawFour) {
+            return true;
+        }
+        return false;
+    }
+
 
 }
