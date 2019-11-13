@@ -6,19 +6,30 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
 
+
     @Test
-    void takeTurn_should_finish_turn_when_none_are_playable() {
-        //TODO: get this test done!
+    void takeTurn_should_finish_turn_when_none_are_playable_and_player_draws_card() {
         //Arrange
         var deck = new Deck();
+        deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
         var player = new Player(deck);
+        player.getHand().getHandCards().clear();
+
+        player.getHand().getHandCards().add(new Card(Faces.Three, Colors.Red));
+        player.getHand().getHandCards().add(new Card(Faces.Two, Colors.Yellow));
+        player.getHand().getHandCards().add(new Card(Faces.One, Colors.Yellow));
+        player.getHand().getHandCards().add(new Card(Faces.Four, Colors.Yellow));
+        player.getHand().getHandCards().add(new Card(Faces.Five, Colors.Yellow));
+        player.getHand().getHandCards().add(new Card(Faces.Six, Colors.Yellow));
+        player.getHand().getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
 
         //Act
         player.takeTurn(deck);
+        var playerHand = player.getHand().getHandCards().size();
 
 
         //Assert
-        assertEquals(true , deck.getDiscard().size());
+        assertEquals(7+1 , playerHand);
     }
 
     @Test

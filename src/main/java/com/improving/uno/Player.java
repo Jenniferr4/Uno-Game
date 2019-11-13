@@ -20,15 +20,30 @@ public class Player {
     }
 
     public void takeTurn(Deck deck) {
-
         for (Card card : hand.getHandCards()) {
             if (isPlayable(deck, card)) {
-                deck.getDiscard().add(card);
-                getHand().getHandCards().remove(card);
+                playCard(deck, card);
+                if (hand.getHandCards().size() == 1) {
+                    System.out.println(
+                            "\n   -------------\n" +
+                            "-------Uno!------"+
+                            "\n   -------------\n"
+                    );
+                }
                 return;
             }
-        }deck.draw();
+        }var pDrewCard = deck.draw();
 
+        hand.getHandCards().add(pDrewCard);
+
+        System.out.println("Player drew a "+ pDrewCard );
+        System.out.println("Player has finished turn \n");
+    }
+
+    private void playCard(Deck deck, Card card) {
+        deck.getDiscard().add(card);
+        System.out.println("Player1 played " + card );
+        getHand().getHandCards().remove(card);
     }
 
 

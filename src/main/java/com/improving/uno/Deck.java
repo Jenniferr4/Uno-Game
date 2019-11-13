@@ -1,12 +1,11 @@
 package com.improving.uno;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.LinkedList;
 import java.util.Random;
 
 public class Deck {
-    private final List<Card> cards = new ArrayList<>();
-    private final List<Card> discard = new ArrayList<>();
+    private final LinkedList<Card> cards = new LinkedList<>();
+    private final LinkedList<Card> discard = new LinkedList<>();
     private final Random random = new Random();
 
 
@@ -22,16 +21,16 @@ public class Deck {
 
             }
         }
+        Collections.shuffle(cards);
     }
 
     public Card draw(){
-        var randomIndex = random.nextInt(cards.size());
-        var card = cards.get(randomIndex);
-        cards.remove(randomIndex);
+        var card = cards.getLast();
+        cards.remove(card);
         return card;
     }
 
-    public List<Card> getCards() {
+    public LinkedList<Card> getCards() {
         return cards;
     }
 
@@ -39,7 +38,7 @@ public class Deck {
         Collections.shuffle(discard);
     }
 
-    public List<Card> getDiscard() {
+    public LinkedList<Card> getDiscard() {
         return discard;
     }
 
