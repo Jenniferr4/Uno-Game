@@ -1,15 +1,26 @@
 package com.improving.uno;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
     public static int takeTurnCount =1;
-    private Hand hand;
+    private final List<Card> handCards;
 
     public Player(Deck deck) {
-        this.hand = new Hand(deck, 7);
+        handCards = new ArrayList<>();
+        initializeSevenCardsToHand(deck, 7);
     }
 
+    public List<Card> getHandCards() {
+        return handCards;
+    }
+
+    private void initializeSevenCardsToHand(Deck deck, int startingHand) {
+        for (int i = 0; i < startingHand; i++) {
+            handCards.add(deck.draw());
+        }
+    }
 
 
     public static boolean isPlayable(Deck deck, Card card) {
@@ -24,11 +35,11 @@ public class Player {
 
     public void takeTurn(Deck deck) {
        var ttc = takeTurnCount++;
-        for (Card card : hand.getHandCards()) {
+        for (Card card : handCards) {
             if (isPlayable(deck, card)) {
                 playCard(deck, card);
                 System.out.println("==Human has finished turn ("+ ttc+ ") \n");
-                if (hand.getHandCards().size() == 1) {
+                if (handCards.size() == 1) {
                     System.out.println(
                             "\n   -------------\n" +
                             "-------Uno!------"+
@@ -39,7 +50,7 @@ public class Player {
             }
         }var pDrewCard = deck.draw();
 
-        hand.getHandCards().add(pDrewCard);
+        handCards.add(pDrewCard);
 
         System.out.println("Human drew a "+ pDrewCard );
         System.out.println("==Human has finished turn ("+ ttc+ ") \n");
@@ -48,12 +59,7 @@ public class Player {
     private void playCard(Deck deck, Card card) {
         deck.getDiscard().add(card);
         System.out.println("Human played " + card );
-        getHand().getHandCards().remove(card);
-    }
-
-
-    public Hand getHand() {
-        return hand;
+        handCards.remove(card);
     }
 
 

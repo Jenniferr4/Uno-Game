@@ -1,11 +1,6 @@
 package com.improving.uno;
 
-import com.improving.uno.Card;
-import com.improving.uno.Deck;
-import com.improving.uno.Hand;
 import org.junit.jupiter.api.Test;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 

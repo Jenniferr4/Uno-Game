@@ -9,7 +9,6 @@ public class Main {
         Player player = new Player(deck);
 
         Game g = new Game(deck, player);
-
         g.play();
 
 

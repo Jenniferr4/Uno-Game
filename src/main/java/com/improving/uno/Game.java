@@ -40,12 +40,12 @@ public class Game {
 
     public boolean gameInProgress(){
         for (Player player : players){
-            if (player.getHand().getHandCards().size() != 0){
+            if (getHandSize(player) != 0){
                 System.out.println(
                         "Player1 has "+
-                        player.getHand().getHandCards().size()+
+                                getHandSize(player) +
                         " cards in hand: \n" +
-                        player.getHand().getHandCards().toString() +
+                                viewPlayersHand(player) +
                         "\n");
 
                 return true;
@@ -58,6 +58,13 @@ public class Game {
         return false;
     }
 
+    private String viewPlayersHand(Player player) {
+        return player.getHandCards().toString();
+    }
+
+    private int getHandSize(Player player) {
+        return player.getHandCards().size();
+    }
 
 
 }

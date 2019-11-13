@@ -13,19 +13,19 @@ class PlayerTest {
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
         var player = new Player(deck);
-        player.getHand().getHandCards().clear();
+        player.getHandCards().clear();
 
-        player.getHand().getHandCards().add(new Card(Faces.Three, Colors.Red));
-        player.getHand().getHandCards().add(new Card(Faces.Two, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.One, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Four, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Five, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Six, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Three, Colors.Red));
+        player.getHandCards().add(new Card(Faces.Two, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.One, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Four, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Five, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Six, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
 
         //Act
         player.takeTurn(deck);
-        var playerHand = player.getHand().getHandCards().size();
+        var playerHand = player.getHandCards().size();
 
 
         //Assert
@@ -51,21 +51,21 @@ class PlayerTest {
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Three, Colors.Blue));
         var player = new Player(deck);
-        player.getHand().getHandCards().clear();
-        player.getHand().getHandCards().add(new Card(Faces.Three, Colors.Red));
-        player.getHand().getHandCards().add(new Card(Faces.Two, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.One, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Four, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Five, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Six, Colors.Yellow));
-        player.getHand().getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
+        player.getHandCards().clear();
+        player.getHandCards().add(new Card(Faces.Three, Colors.Red));
+        player.getHandCards().add(new Card(Faces.Two, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.One, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Four, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Five, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Six, Colors.Yellow));
+        player.getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
 
 
         //Act
         player.takeTurn(deck);
 
         //Assert
-        assertEquals(7-1, player.getHand().getHandCards().size());
+        assertEquals(7-1, player.getHandCards().size());
     }
 
 
