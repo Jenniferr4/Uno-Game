@@ -9,6 +9,8 @@ public class Player {
         this.hand = new Hand(deck, 7);
     }
 
+
+
     public static boolean isPlayable(Deck deck, Card card) {
         if (deck.getTopDiscardCard().getColor() == card.getColor() ||
                 deck.getTopDiscardCard().getFace() == card.getFace() ||
@@ -36,13 +38,13 @@ public class Player {
 
         hand.getHandCards().add(pDrewCard);
 
-        System.out.println("Player drew a "+ pDrewCard );
-        System.out.println("Player has finished turn \n");
+        System.out.println("Human drew a "+ pDrewCard );
+        System.out.println("Human has finished turn \n");
     }
 
     private void playCard(Deck deck, Card card) {
         deck.getDiscard().add(card);
-        System.out.println("Player1 played " + card );
+        System.out.println("Human played " + card );
         getHand().getHandCards().remove(card);
     }
 

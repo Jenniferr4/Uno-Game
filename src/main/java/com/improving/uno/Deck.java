@@ -13,7 +13,7 @@ public class Deck {
         for(var color : Colors.values()){
             for(var face : Faces.values()){
                 if(face.getValue() == 50 ){
-                    cards.add(new Card(face, null));
+                    cards.add(new Card(face, Colors.Red));
                 }else{
                     cards.add(new Card(face, color));
                     cards.add(new Card(face, color));
@@ -25,9 +25,22 @@ public class Deck {
     }
 
     public Card draw(){
+        if(cards.size() == 0){
+            recycleDeck();
+        }
         var card = cards.getLast();
         cards.remove(card);
         return card;
+    }
+
+    private void recycleDeck() {
+        System.out.println("\n.....REFEREE IS RECYCLING DECK.....\n");
+        var referee = getTopDiscardCard();
+        discard.remove(getTopDiscardCard());
+        cards.addAll(discard);
+        Collections.shuffle(cards);
+        discard.clear();
+        discard.add(referee);
     }
 
     public LinkedList<Card> getCards() {
@@ -45,5 +58,6 @@ public class Deck {
     public Card getTopDiscardCard(){
         return discard.get(this.discard.size()-1);
     }
+
 
 }

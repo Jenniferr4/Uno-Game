@@ -41,7 +41,8 @@ public class Game {
     public boolean gameInProgress(){
         for (Player player : players){
             if (player.getHand().getHandCards().size() != 0){
-                System.out.println("Player1 has "+
+                System.out.println(
+                        "Player1 has "+
                         player.getHand().getHandCards().size()+
                         " cards in hand: \n" +
                         player.getHand().getHandCards().toString() +
