@@ -6,9 +6,8 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        Player player = new Player(deck);
+        Game g = new Game(deck);
 
-        Game g = new Game(deck, player);
         g.play();
 
 
