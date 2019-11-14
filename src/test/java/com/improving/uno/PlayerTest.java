@@ -1,5 +1,6 @@
 package com.improving.uno;
 
+import com.improving.uno.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,20 +32,6 @@ class PlayerTest {
         //Assert
         assertEquals(7+1 , playerHand);
     }
-
-//    @Test
-//    void takeTurn_should_add_top_card_to_discard_pile_of_deck() {
-//        //Arrange
-//        var deck = new Deck();
-//        var player = new Player(deck, "Cortana");
-//
-//        //Act
-//        player.takeTurn(deck);
-//
-//
-//        //Assert
-//        assertEquals(1, deck.getDiscard().size());
-//    }
 
     @Test
     void takeTurn_should_remove_one_card_from_player_hand_if_playable() {
@@ -109,7 +96,7 @@ class PlayerTest {
         var deck = new Deck();
         var player = new Player(deck, "Cortana");
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
-        var card = new Card(Faces.Wild, null);
+        var card = new Card(Faces.WILD, null);
 
 
         //Act
@@ -125,7 +112,7 @@ class PlayerTest {
         var deck = new Deck();
         var player = new Player(deck, "Cortana");
         deck.getDiscard().add(new Card(Faces.One, Colors.Red));
-        var card = new Card(Faces.WildDrawFour, null);
+        var card = new Card(Faces.WILD_DrawFour, null);
 
 
         //Act

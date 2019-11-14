@@ -1,8 +1,10 @@
 package com.improving.uno;
 
+import com.improving.uno.players.Player;
+
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class Game {
     private Deck deck;
@@ -11,7 +13,7 @@ public class Game {
     private static int amountOfTurnsInGame = 0;
 
 
-    public Game(Deck deck) {
+    public Game() {
         this.deck = new Deck();
         this.players.add(new Player(deck, "Jennifer"));
         this.players.add(new Player(deck, "Emma"));
@@ -21,12 +23,17 @@ public class Game {
 
     public void play() {
         deck.getDiscard().add(deck.draw());
+        if (deck.getTopDiscardCard().getColor() == null){
+            deck.getTopDiscardCard().setColor(Colors.values()[new Random().nextInt(4)]);
+        }
         System.out.println("        NUMBER OF PLAYERS: " + players.size());
         System.out.println("    STARTING CARD: " + deck.getDiscard().getLast() + "\n");
 
         while (gameInProgress() == true) {
             for (Player player : players) {
                 player.takeTurn(deck);
+                System.out.println(">>>>>>>>>>>>>DISCARD_SIZE: "+deck.getDiscard().size());
+                System.out.println(">>>>>PLAY_DECK_SIZE: " + deck.getCards().size());
                 amountOfTurnsInGame++;
                 printPlayerHandStatus(player);
                 if (player.getHandCards().size() == 0){
@@ -74,8 +81,8 @@ public class Game {
     public static boolean isPlayable(Deck deck, Card card) {
         if (deck.getTopDiscardCard().getColor() == card.getColor() ||
                 deck.getTopDiscardCard().getFace() == card.getFace() ||
-                card.getFace() == Faces.Wild ||
-                card.getFace() == Faces.WildDrawFour) {
+                card.getFace() == Faces.WILD ||
+                card.getFace() == Faces.WILD_DrawFour) {
             return true;
         }
         return false;

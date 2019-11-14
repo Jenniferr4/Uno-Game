@@ -2,7 +2,7 @@ package com.improving.uno;
 
 public class Card {
     private final Faces face;
-    private final Colors color;
+    private Colors color;
 
 
     public Card(Faces face, Colors color) {
@@ -24,5 +24,9 @@ public class Card {
 
     public Colors getColor() {
         return color;
+    }
+
+    public void setColor(Colors color) {
+        this.color = color;
     }
 }

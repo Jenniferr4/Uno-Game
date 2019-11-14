@@ -13,7 +13,7 @@ public class Deck {
         for(var color : Colors.values()){
             for(var face : Faces.values()){
                 if(face.getValue() == 50 ){
-                    cards.add(new Card(face, Colors.Red));
+                    cards.add(new Card(face, null));
                 }else{
                     cards.add(new Card(face, color));
                     cards.add(new Card(face, color));

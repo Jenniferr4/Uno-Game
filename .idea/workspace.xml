@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/SmartPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Faces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Faces.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Faces.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Faces.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" afterDir="false" />
@@ -25,6 +34,7 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -41,6 +51,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../poker" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -73,10 +84,26 @@
       <module name="uno" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
+          <option name="PATTERN" value="com.improving.uno.players.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameTest.play" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="uno" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.improving.uno.players.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.improving.uno" />
+      <option name="MAIN_CLASS_NAME" value="com.improving.uno.GameTest" />
+      <option name="METHOD_NAME" value="play" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,7 +112,7 @@
       <module name="uno" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
+          <option name="PATTERN" value="com.improving.uno.players.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -101,7 +128,7 @@
       <module name="uno" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
+          <option name="PATTERN" value="com.improving.uno.players.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -112,27 +139,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlayerTest.isPlayable_should_return_true_when_colors_match" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="uno" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.improving.uno" />
-      <option name="MAIN_CLASS_NAME" value="com.improving.uno.PlayerTest" />
-      <option name="METHOD_NAME" value="isPlayable_should_return_true_when_colors_match" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="PlayerTest.takeTurn_should_add_top_card_to_discard_pile_of_deck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="uno" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.improving.uno.*" />
+          <option name="PATTERN" value="com.improving.uno.players.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,10 +158,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.GameTest.play" />
         <item itemvalue="JUnit.PlayerTest.takeTurn_should_add_top_card_to_discard_pile_of_deck" />
         <item itemvalue="JUnit.PlayerTest" />
         <item itemvalue="JUnit.HandTest.hand_should_initialize_with_x_cards" />
-        <item itemvalue="JUnit.PlayerTest.isPlayable_should_return_true_when_colors_match" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +190,15 @@
     </option>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="players.get(1).name" />

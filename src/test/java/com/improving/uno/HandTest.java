@@ -1,5 +1,6 @@
 package com.improving.uno;
 
+import com.improving.uno.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -7,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class HandTest {
 
     @Test
-    void hand_should_initialize_with_x_cards() {
+    void hand_should_initialize_with_7_cards() {
         //Arrange
         var deck = new Deck();
         var player = new Player(deck, "Cortana");
