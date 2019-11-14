@@ -13,6 +13,7 @@ class PlayerTest {
         //Arrange
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
+        var game = new Game();
         var player = new Player(deck, "Cortana");
         player.getHandCards().clear();
 
@@ -25,12 +26,12 @@ class PlayerTest {
         player.getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
 
         //Act
-        player.takeTurn(deck);
+        player.takeTurn(game);
         var playerHand = player.getHandCards().size();
 
 
         //Assert
-        assertEquals(7+1 , playerHand);
+        assertEquals(7 + 1, playerHand);
     }
 
     @Test
@@ -39,6 +40,8 @@ class PlayerTest {
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Three, Colors.Blue));
         var player = new Player(deck, "Cortana");
+        var game = new Game();
+
         player.getHandCards().clear();
         player.getHandCards().add(new Card(Faces.Three, Colors.Red));
         player.getHandCards().add(new Card(Faces.Two, Colors.Yellow));
@@ -50,28 +53,26 @@ class PlayerTest {
 
 
         //Act
-        player.takeTurn(deck);
+        player.takeTurn(game);
 
         //Assert
-        assertEquals(7-1, player.getHandCards().size());
+        assertEquals(7 - 1, player.getHandCards().size());
     }
-
-
 
 
     @Test
     void isPlayable_should_return_true_when_colors_match() {
-            //Arrange
-            var deck = new Deck();
-            var player = new Player(deck, "Cortana");
-                var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
-            var card = new Card(Faces.One, Colors.Red);
+        //Arrange
+        var deck = new Deck();
+        var player = new Player(deck, "Cortana");
+        var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
+        var card = new Card(Faces.One, Colors.Red);
 
-            //Act
-            var result = Game.isPlayable(deck, card);
+        //Act
+        var result = Game.isPlayable(deck, card);
 
-            //Assert
-            assertEquals(true, result);
+        //Assert
+        assertEquals(true, result);
     }
 
     @Test

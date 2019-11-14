@@ -14,7 +14,7 @@ class HandTest {
         var player = new Player(deck, "Cortana");
 
         //Act
-        var result = player.getHandCards().size();
+        var result = player.handSize();
 
 
                 //Assert
@@ -28,7 +28,7 @@ class HandTest {
         var player = new Player(deck, "Cortana");
 
         //Act
-        var result = player.getHandCards().size();
+        var result = player.handSize();
         var draw = deck.getCards().size();
 
         //Assert

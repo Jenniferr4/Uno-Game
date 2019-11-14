@@ -3,6 +3,7 @@ package com.improving.uno.players;
 import com.improving.uno.Card;
 import com.improving.uno.Colors;
 import com.improving.uno.Deck;
+import com.improving.uno.Game;
 import com.improving.uno.players.iPlayer;
 
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ public class Player implements iPlayer {
     }
 
 
-
-    public List<Card> getHandCards() {
-        return handCards;
+    @Override
+    public int handSize() {
+        return handCards.size();
     }
 
     private void initializeSevenCardsToHand(Deck deck, int startingHand) {
@@ -42,16 +43,16 @@ public class Player implements iPlayer {
     }
 
     @Override
-    public void takeTurn(Deck deck) {
+    public void takeTurn(Game game) {
         var ttc = takeTurnCount++;
         for (Card card : handCards) {
-            if (isPlayable(deck, card)) {
-                playCard(deck, card);
-                if (deck.getTopDiscardCard().getColor() == null){
-                    deck.getTopDiscardCard().setColor(Colors.values()[new Random().nextInt(4)]);
-                    System.out.print("<--> " +card.getColor().toString() );
+            if (isPlayable(game.getDeck(), card)) {
+                playCard(game.getDeck(), card);
+                if (game.getDeck().getTopDiscardCard().getColor() == null){
+                    game.getDeck().getTopDiscardCard().setColor(Colors.values()[new Random().nextInt(4)]);
+                    System.out.print("<--> " +card.getColor().toString()+ " " );
                 }
-                System.out.print(", and has finished turn (" + ttc + ")\n");
+                System.out.print("and has FINISHED turn (" + ttc + ")\n");
                 if (handCards.size() == 1) {
                     printUNO();
                 }
@@ -60,24 +61,31 @@ public class Player implements iPlayer {
             }
         }
         //TODO: game over if player won else draw
-        var pDrewCard = deck.draw();
+        var pDrewCard = draw(game);
         handCards.add(pDrewCard);
         printCardDrawnNTurnAmount(ttc, pDrewCard);
-        if (isPlayable(deck, pDrewCard)){
-            playCard(deck, pDrewCard);
+        if (isPlayable(game.getDeck(), pDrewCard)){
+            playCard(game.getDeck(), pDrewCard);
         }
 
     }
 
+    @Override
+    public Card draw(Game game) {
+        Card card = game.getDeck().draw();
+        handCards.add(card);
+        return card;
+    }
+
     private void printUNO() {
         System.out.println(
-                "\n   -------------\n" +
-                        "-------Uno!------" +
-                        "\n   -------------\n");
+                "     -------------\n" +
+                        "   -------Uno!------" +
+                        "\n     -------------\n");
     }
 
     private void printCardDrawnNTurnAmount(int ttc, Card pDrewCard) {
-        System.out.println(getName() + " drew a " + pDrewCard + " and has finished turn (" + ttc + "). ");
+        System.out.println(getName() + " drew a card and has FINISHED turn (" + ttc + "). ");
     }
 
     private void playCard(Deck deck, Card card) {
@@ -88,5 +96,10 @@ public class Player implements iPlayer {
 
     public String getName() {
         return name;
+    }
+
+
+    public List<Card> getHandCards() {
+        return handCards;
     }
 }

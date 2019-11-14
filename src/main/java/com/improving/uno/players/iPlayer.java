@@ -1,8 +1,15 @@
 package com.improving.uno.players;
 
-import com.improving.uno.Deck;
+import com.improving.uno.Card;
+import com.improving.uno.Game;
 
 public interface iPlayer {
-    void takeTurn(Deck deck);
+
+    Card draw(Game game);
+
+    int handSize();
+
+    void takeTurn(Game game);
+
 
 }

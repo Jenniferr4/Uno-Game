@@ -2,24 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/SmartPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Faces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Faces.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/SmartPlayer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Card.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Faces.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Faces.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/SmartPlayer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/iPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/players/iPlayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" afterDir="false" />
     </list>
