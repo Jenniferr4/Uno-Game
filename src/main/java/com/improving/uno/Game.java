@@ -43,7 +43,7 @@ public class Game {
                 currentPlayer = turnIndex + numOfPlayers;
             }
             currentPlayer = turnIndex%numOfPlayers;
-
+//add reverse card and skip ability
             players.get(currentPlayer).takeTurn(this);
             System.out.println(">>DISCARD pile size: " + deck.getDiscard().size() + " " +
                     "||  >>DRAW pile size: " + deck.getCards().size() + "\n");
