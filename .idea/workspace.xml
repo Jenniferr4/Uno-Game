@@ -3,19 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/SmartPlayer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/iPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/GameTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/SmartPlayer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/iPlayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/players/iPlayer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +25,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1TKy7dhYvcYPy83KzeTq6n5vxsa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
