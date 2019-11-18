@@ -11,10 +11,10 @@ class PlayerTest {
     @Test
     void takeTurn_should_finish_turn_when_none_are_playable_and_player_draws_card() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
-        var game = new Game();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         player.getHandCards().clear();
 
         player.getHandCards().add(new Card(Faces.Three, Colors.Red));
@@ -37,10 +37,11 @@ class PlayerTest {
     @Test
     void takeTurn_should_remove_one_card_from_player_hand_if_playable() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Three, Colors.Blue));
-        var player = new Player(deck, "Cortana");
-        var game = new Game();
+        var player = new Player(game, "Cortana");
+
 
         player.getHandCards().clear();
         player.getHandCards().add(new Card(Faces.Three, Colors.Red));
@@ -63,13 +64,14 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_colors_match() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.One, Colors.Red);
 
         //Act
-        var result = Game.isPlayable(deck, card);
+        var result = game.isPlayable(card);
 
         //Assert
         assertEquals(true, result);
@@ -78,14 +80,15 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_faces_match() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Blue));
         var card = new Card(Faces.One, Colors.Red);
 
 
         //Act
-        var result = Game.isPlayable(deck, card);
+        var result = game.isPlayable(card);
 
         //Assert
         assertEquals(true, result);
@@ -94,14 +97,15 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_wild() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.WILD, null);
 
 
         //Act
-        var result = Game.isPlayable(deck, card);
+        var result = game.isPlayable(card);
 
         //Assert
         assertEquals(true, result);
@@ -110,14 +114,15 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_draw_4_wild() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.WILD_DrawFour, null);
 
 
         //Act
-        var result = Game.isPlayable(deck, card);
+        var result = game.isPlayable(card);
 
         //Assert
         assertEquals(true, result);
@@ -126,14 +131,16 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_FALSE_when_card_is_not_a_match() {
         //Arrange
+        var game = new Game();
         var deck = new Deck();
-        var player = new Player(deck, "Cortana");
+        var player = new Player(game, "Cortana");
         deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.Three, Colors.Blue);
 
 
+
         //Act
-        var result = Game.isPlayable(deck, card);
+        var result = game.isPlayable(card);
 
         //Assert
         assertEquals(false, result);

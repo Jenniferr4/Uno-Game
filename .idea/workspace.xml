@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f5b3b45d-64a4-4ac7-b197-e22a65f52820" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/iDeck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/iGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/improving/uno/players/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/HandTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/improving/uno/PlayerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Deck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/improving/uno/players/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/HandTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/improving/uno/PlayerTest.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,8 +27,8 @@
       <list>
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -182,8 +194,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/improving/uno/Deck.java</url>
-          <line>42</line>
-          <option name="timeStamp" value="10" />
+          <line>31</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -191,6 +203,7 @@
       <configuration name="Application">
         <watch expression="players.get(1).name" />
         <watch expression="players.get(1).name" />
+        <watch expression="((Game)this).players" custom="com.improving.uno.Game" />
       </configuration>
     </watches-manager>
   </component>
