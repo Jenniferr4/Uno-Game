@@ -1,11 +1,13 @@
-package com.improving.uno;
+package com.improving;
 
-import com.improving.uno.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class HandTest {
+
+
+
 
     @Test
     void hand_should_initialize_with_7_cards() {
@@ -22,14 +24,13 @@ class HandTest {
     }
 
     @Test
-    void hand_should_remove_x_cards_from_deck() {
+    void hand_should_remove_7_cards_from_deck_when_draw() {
         //Arrange
         var game = new Game();
         var deck = new Deck();
         var player = new Player(game, "Cortana");
 
         //Act
-        var result = player.handSize();
         var draw = deck.getCards().size();
 
         //Assert

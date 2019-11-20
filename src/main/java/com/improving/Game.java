@@ -1,10 +1,8 @@
-package com.improving.uno;
+package com.improving;
 
-import com.improving.uno.players.Player;
-
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 public class Game implements iGame {
@@ -16,6 +14,7 @@ public class Game implements iGame {
     int turnIndex = 0;
     int currentPlayer;
     int turnDirection = 1;
+    Optional<Colors> currentColor = null;
 
 
     public Game() {
@@ -40,9 +39,6 @@ public class Game implements iGame {
 
             printPlayingInfo();
             amountOfTurnsInGame++; //counts how many turns have been taken by every player
-            if (specialCard() == true) {
-                executeSpecialCard();
-            }
             turnIndex = turnIndex + turnDirection;
 
         }
@@ -53,12 +49,19 @@ public class Game implements iGame {
     public void playCard(Card card) {
         if (card.getColor() == null) {
             card.setColor(Colors.values()[new Random().nextInt(4)]);
-            System.out.print("<--> " + card.getColor().toString() + " " );
         }
         deck.getDiscard().add(card);
-        System.out.print("" + players.get(currentPlayer).getName() + " played " + card +" ");
         players.get(currentPlayer).getHandCards().remove(card);
-
+        System.out.println(players.get(currentPlayer).getName() + " played a " + card +"");
+        if (players.get(currentPlayer).getHandCards().size() == 1 || players.get(currentPlayer).getHandCards().size() == 0){
+            System.out.println(
+                    "     -------------\n" +
+                    "   -------Uno!------" +
+                    "\n     -------------\n");
+        }
+        if (specialCard() == true) {
+            executeSpecialCard();
+        }
     }
 
 
@@ -76,34 +79,35 @@ public class Game implements iGame {
     public void executeSpecialCard() {
         if (deck.getTopDiscardCard().getFace() == Faces.Reverse) {
             turnDirection = turnDirection * -1;
-            System.out.println("<-- TURNS HAS BEEN REVERSED -->\n");
+            System.out.println("<-- TURNS HAS BEEN REVERSED -->");
         }
         if (deck.getTopDiscardCard().getFace() == Faces.Skip) {
-            System.out.println("\n<-- " +
-                    players.get((turnIndex+numOfPlayers + turnDirection) % numOfPlayers).getName()
-                    + " HAS BEEN SKIPPED. -->\n");
+            System.out.println("<-- " +
+                    players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers).getName()
+                    + " HAS BEEN SKIPPED. -->");
             turnIndex = turnIndex + turnDirection;
         }
         if (deck.getTopDiscardCard().getFace() == Faces.WILD_DrawFour) {
-            var playerDraw = players.get((turnIndex +numOfPlayers+ turnDirection) % numOfPlayers);
-            playerDraw.draw(this);
-            playerDraw.draw(this);
-            playerDraw.draw(this);
-            playerDraw.draw(this);
+            var playerDraw = players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers);
+//            playerDraw.draw(this);
+            playerDraw.getHandCards().add(draw());
+            playerDraw.getHandCards().add(draw());
+            playerDraw.getHandCards().add(draw());
+            playerDraw.getHandCards().add(draw());
             turnIndex = turnIndex + turnDirection;
-            System.out.println("\n<---" + playerDraw.getName() +
+            System.out.println("<---" + playerDraw.getName() +
                     " WAS FORCED TO DRAW FOUR CARDS" +
-                    " AND HAS BEEN SKIPPED. ---> \n");
+                    " AND HAS BEEN SKIPPED. ---> ");
 
         }
         if (deck.getTopDiscardCard().getFace() == Faces.DrawTwo) {
-            var playerDraw = players.get((turnIndex + numOfPlayers+ turnDirection) % numOfPlayers);
-            playerDraw.draw(this);
-            playerDraw.draw(this);
+            var playerDraw = players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers);
+            playerDraw.getHandCards().add(draw());
+            playerDraw.getHandCards().add(draw());
             turnIndex = turnIndex + turnDirection;
-            System.out.println("\n<---" + playerDraw.getName() +
+            System.out.println("<---" + playerDraw.getName() +
                     " WAS FORCED TO DRAW TWO CARDS" +
-                    " AND HAS BEEN SKIPPED. ---> \n");
+                    " AND HAS BEEN SKIPPED. ---> ");
 
         }
 
@@ -130,6 +134,9 @@ public class Game implements iGame {
 
     @Override
     public boolean isPlayable(Card card) {
+        if (deck.getTopDiscardCard() == null || card == null) {
+            System.out.println("found it!");
+        }
         if (deck.getTopDiscardCard().getColor() == card.getColor() ||
                 deck.getTopDiscardCard().getFace() == card.getFace() ||
                 card.getFace() == Faces.WILD ||
@@ -154,6 +161,7 @@ public class Game implements iGame {
     }
 
     private void printPlayingInfo() {
+        System.out.println(players.get(currentPlayer).getHandCards().toString());
         System.out.println("Player now has " + players.get(currentPlayer).handSize() + " cards.");
         System.out.println(">>DISCARD pile size: " + deck.getDiscard().size() + " " +
                 "||  >>DRAW pile size: " + deck.getCards().size() + "\n");

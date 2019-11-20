@@ -1,7 +1,7 @@
-package com.improving.uno.players;
+package com.improving;
 
-import com.improving.uno.Card;
-import com.improving.uno.Game;
+import com.improving.Game;
+import com.improving.Card;
 
 public interface iPlayer {
 

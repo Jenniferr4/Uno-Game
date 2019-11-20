@@ -1,4 +1,4 @@
-package com.improving.uno;
+package com.improving;
 
 import org.junit.jupiter.api.Test;
 

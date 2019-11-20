@@ -1,10 +1,7 @@
-package com.improving.uno.players;
-
-import com.improving.uno.*;
+package com.improving;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 
 public class Player implements iPlayer {
@@ -14,7 +11,7 @@ public class Player implements iPlayer {
     private static int gameOverUno = 0;
 
 
-    public Player(Game game,  String name) {
+    public Player(Game game, String name) {
         handCards = new ArrayList<>();
         initializeSevenCardsToHand(game, 7);
         this.name = name;
@@ -39,24 +36,21 @@ public class Player implements iPlayer {
 
     @Override
     public void takeTurn(Game game) {
-        var ttc = takeTurnCount++;
+        var tTurnCount = takeTurnCount++;
         for (Card card : handCards) {
             if (game.isPlayable(card)) {
                 game.playCard(card);
-                System.out.print("and has FINISHED turn (" + ttc + ")\n");
-                if (handCards.size() == 1) {
-                    printUNO();
-                }
                 return;
             }
         }
         Card card = draw(game);
         handCards.add(card);
-        printCardDrawnNTurnAmount(ttc, card);
-        if (game.isPlayable(card)){
+        if (game.isPlayable(card)) {
             game.playCard(card);
+            System.out.println("after drawing from deck."  );
             return;
         }
+
 
     }
 
@@ -65,18 +59,6 @@ public class Player implements iPlayer {
         Card card = game.draw();
         return card;
     }
-
-    private void printUNO() {
-        System.out.println(
-                "     -------------\n" +
-                        "   -------Uno!------" +
-                        "\n     -------------\n");
-    }
-
-    private void printCardDrawnNTurnAmount(int ttc, Card pDrewCard) {
-        System.out.println(getName() + " drew a card and has FINISHED turn (" + ttc + "). ");
-    }
-
 
 
     public String getName() {

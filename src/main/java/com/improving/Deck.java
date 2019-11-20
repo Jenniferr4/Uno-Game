@@ -1,4 +1,4 @@
-package com.improving.uno;
+package com.improving;
 
 import java.util.Collections;
 import java.util.LinkedList;
@@ -25,19 +25,23 @@ public class Deck implements iDeck {
         Collections.shuffle(cards);
     }
 
+
     public Card draw() {
-        if (cards.size() == 1) {
+        if (cards.size() == 0) {
             recycleDeck();
         }
-        Card card = cards.pop();
+        Card card = cards.getLast();
+        cards.remove(card);
         return card;
     }
 
     private void recycleDeck() {
-        System.out.println("\n.....REFEREE IS RECYCLING DECK.....\n");
+        System.out.println("\n.....REFEREE IS RECYCLING DECK.....\n" +
+                ".....DrawPile now has " + getDiscardPileSize());
         var referee = getTopDiscardCard();
         discard.remove(getTopDiscardCard());
         cards.addAll(discard);
+        Collections.shuffle(cards);
         Collections.shuffle(cards);
         discard.clear();
         discard.add(referee);

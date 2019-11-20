@@ -1,7 +1,5 @@
-package com.improving.uno;
+package com.improving;
 
-import java.util.ArrayList;
-import java.util.List;
 //TODO: make sure player wins game
 public class Main {
     public static void main(String[] args) {

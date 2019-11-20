@@ -1,6 +1,4 @@
-package com.improving.uno;
-
-import java.awt.*;
+package com.improving;
 
 public interface iGame {
     boolean isPlayable(Card card);

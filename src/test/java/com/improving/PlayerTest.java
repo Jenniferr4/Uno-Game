@@ -1,6 +1,5 @@
-package com.improving.uno;
+package com.improving;
 
-import com.improving.uno.players.Player;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -14,20 +13,20 @@ class PlayerTest {
         var game = new Game();
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
-        var player = new Player(game, "Cortana");
-        player.getHandCards().clear();
+        var cortana = new Player(game, "Cortana");
+        cortana.getHandCards().clear();
 
-        player.getHandCards().add(new Card(Faces.Three, Colors.Red));
-        player.getHandCards().add(new Card(Faces.Two, Colors.Yellow));
-        player.getHandCards().add(new Card(Faces.One, Colors.Yellow));
-        player.getHandCards().add(new Card(Faces.Four, Colors.Yellow));
-        player.getHandCards().add(new Card(Faces.Five, Colors.Yellow));
-        player.getHandCards().add(new Card(Faces.Six, Colors.Yellow));
-        player.getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.Three, Colors.Red));
+        cortana.getHandCards().add(new Card(Faces.Two, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.One, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.Four, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.Five, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.Six, Colors.Yellow));
+        cortana.getHandCards().add(new Card(Faces.Seven, Colors.Yellow));
 
         //Act
-        player.takeTurn(game);
-        var playerHand = player.getHandCards().size();
+        cortana.takeTurn(game);
+        var playerHand = cortana.getHandCards().size();
 
 
         //Assert
@@ -145,6 +144,8 @@ class PlayerTest {
         //Assert
         assertEquals(false, result);
     }
+
+
 
 
 }
