@@ -2,6 +2,10 @@ package com.improving;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
@@ -10,10 +14,13 @@ class PlayerTest {
     @Test
     void takeTurn_should_finish_turn_when_none_are_playable_and_player_draws_card() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Eight, Colors.Blue));
-        var cortana = new Player(game, "Cortana");
+        var cortana = new Player(handCards, 1);
         cortana.getHandCards().clear();
 
         cortana.getHandCards().add(new Card(Faces.Three, Colors.Red));
@@ -36,10 +43,13 @@ class PlayerTest {
     @Test
     void takeTurn_should_remove_one_card_from_player_hand_if_playable() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
         deck.getDiscard().add(new Card(Faces.Three, Colors.Blue));
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
 
 
         player.getHandCards().clear();
@@ -63,9 +73,13 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_colors_match() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.One, Colors.Red);
 
@@ -79,9 +93,13 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_faces_match() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Blue));
         var card = new Card(Faces.One, Colors.Red);
 
@@ -96,9 +114,13 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_wild() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
         var addedCard = deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.WILD, null);
 
@@ -113,9 +135,12 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_true_when_draw_4_wild() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
         deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.WILD_DrawFour, null);
 
@@ -130,12 +155,14 @@ class PlayerTest {
     @Test
     void isPlayable_should_return_FALSE_when_card_is_not_a_match() {
         //Arrange
-        var game = new Game();
+        List<Card> handCards = new ArrayList<>();
+        Scanner scan = new Scanner(System.in);
+        int playersNum = scan.nextInt();
+        Game game = new Game(playersNum);
         var deck = new Deck();
-        var player = new Player(game, "Cortana");
+        var player = new Player(handCards, 1);
         deck.getDiscard().add(new Card(Faces.One, Colors.Red));
         var card = new Card(Faces.Three, Colors.Blue);
-
 
 
         //Act
@@ -144,8 +171,6 @@ class PlayerTest {
         //Assert
         assertEquals(false, result);
     }
-
-
 
 
 }

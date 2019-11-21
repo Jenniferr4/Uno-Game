@@ -1,19 +1,16 @@
 package com.improving;
 
-//TODO: make sure player wins game
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        Deck deck = new Deck();
-        Game g = new Game();
+        System.out.print("How many players? ");
+        Scanner scan = new Scanner(System.in);
+        int playerAmount = scan.nextInt();
+        Game game = new Game(playerAmount);
 
-        g.play();
-
+        game.play();
 
     }
 }
-//    var deck = new Deck();
-//    var hand = new Hand(deck, 7);
-//        deck.draw();
-//
-//
-//                System.out.println(hand.getHandCards().toString());

@@ -1,11 +1,8 @@
 package com.improving;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.Random;
+import java.util.*;
 
-public class Game implements iGame {
+public class Game implements IGame {
     private static Deck deck;
     private List<Player> players = new ArrayList<>();
     private Card card;
@@ -14,15 +11,29 @@ public class Game implements iGame {
     int turnIndex = 0;
     int currentPlayer;
     int turnDirection = 1;
-    Optional<Colors> currentColor = null;
+    Optional<Colors> chosenColor;
 
 
-    public Game() {
-        this.deck = new Deck();
-        this.players.add(new Player(this, "Jen"));
-        this.players.add(new Player(this, "Emma"));
-        this.players.add(new Player(this, "Grand"));
-        numOfPlayers = players.size();
+
+
+    public Game(int numOfPlayers) {
+        this.numOfPlayers = numOfPlayers;
+        deck = new Deck();
+        for (int i = 0; i < numOfPlayers; i++) {
+            players.add(new Player(createHand(), i));
+        }
+    }
+
+    public List<Card> createHand() {
+        List<Card> playerHand = new ArrayList<>();
+        playerHand.add(draw());
+        playerHand.add(draw());
+        playerHand.add(draw());
+        playerHand.add(draw());
+        playerHand.add(draw());
+        playerHand.add(draw());
+        playerHand.add(draw());
+        return playerHand;
     }
 
     @Override
@@ -30,11 +41,12 @@ public class Game implements iGame {
         deck.getDiscard().add(deck.draw());
         ifStartingCardIsWild_AssignColor();
         printStartingGameInfo();
+        System.out.println();
         while (gameInProgress() == true) {
-            if (turnIndex < 0) {
+            if (turnIndex <= 0) {
                 turnIndex = (turnIndex + numOfPlayers) % numOfPlayers;
             }
-            currentPlayer = turnIndex % numOfPlayers;
+            currentPlayer = (turnIndex + numOfPlayers) % numOfPlayers;
             players.get(currentPlayer).takeTurn(this);
 
             printPlayingInfo();
@@ -46,18 +58,18 @@ public class Game implements iGame {
 
     }
 
-    public void playCard(Card card) {
+    @Override
+    public void playCard(Card card, Optional<Colors> color) {
         if (card.getColor() == null) {
             card.setColor(Colors.values()[new Random().nextInt(4)]);
         }
         deck.getDiscard().add(card);
         players.get(currentPlayer).getHandCards().remove(card);
-        System.out.println(players.get(currentPlayer).getName() + " played a " + card +"");
-        if (players.get(currentPlayer).getHandCards().size() == 1 || players.get(currentPlayer).getHandCards().size() == 0){
+        if (players.get(currentPlayer).getHandCards().size() == 1 || players.get(currentPlayer).getHandCards().size() == 0) {
             System.out.println(
                     "     -------------\n" +
-                    "   -------Uno!------" +
-                    "\n     -------------\n");
+                            "   -------Uno!------" +
+                            "\n     -------------\n");
         }
         if (specialCard() == true) {
             executeSpecialCard();
@@ -83,19 +95,18 @@ public class Game implements iGame {
         }
         if (deck.getTopDiscardCard().getFace() == Faces.Skip) {
             System.out.println("<-- " +
-                    players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers).getName()
+                    players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers).getId()
                     + " HAS BEEN SKIPPED. -->");
             turnIndex = turnIndex + turnDirection;
         }
         if (deck.getTopDiscardCard().getFace() == Faces.WILD_DrawFour) {
             var playerDraw = players.get((turnIndex + numOfPlayers + turnDirection) % numOfPlayers);
-//            playerDraw.draw(this);
             playerDraw.getHandCards().add(draw());
             playerDraw.getHandCards().add(draw());
             playerDraw.getHandCards().add(draw());
             playerDraw.getHandCards().add(draw());
             turnIndex = turnIndex + turnDirection;
-            System.out.println("<---" + playerDraw.getName() +
+            System.out.println("<---Player-" + playerDraw.getId() +
                     " WAS FORCED TO DRAW FOUR CARDS" +
                     " AND HAS BEEN SKIPPED. ---> ");
 
@@ -105,7 +116,7 @@ public class Game implements iGame {
             playerDraw.getHandCards().add(draw());
             playerDraw.getHandCards().add(draw());
             turnIndex = turnIndex + turnDirection;
-            System.out.println("<---" + playerDraw.getName() +
+            System.out.println("<---" + playerDraw.getId() +
                     " WAS FORCED TO DRAW TWO CARDS" +
                     " AND HAS BEEN SKIPPED. ---> ");
 
@@ -118,7 +129,7 @@ public class Game implements iGame {
     public boolean gameInProgress() {
         for (Player player : players) {
             if (player.handSize() == 0) {
-                printGOverNWinner();
+                printGameOver_and_Winner();
                 return false;
             }
         }
@@ -126,9 +137,9 @@ public class Game implements iGame {
     }
 
 
-    private void printGOverNWinner() {
+    private void printGameOver_and_Winner() {
         System.out.println(
-                "=====Game Over=====\n" + " " +
+                "=====Game Over=====\n" + " " + " Player-"+
                         winnerWinner() + " has won!");
     }
 
@@ -146,18 +157,19 @@ public class Game implements iGame {
         return false;
     }
 
+    @Override
     public Card draw() {
         return deck.draw();
     }
 
 
-    public String winnerWinner() {
+    public int winnerWinner() {
         for (Player player : players) {
             if (player.handSize() == 0) {
-                return player.getName();
+                return player.getId();
             }
         }
-        return "NOBODY WON >:)";
+        return 0;
     }
 
     private void printPlayingInfo() {
@@ -178,12 +190,17 @@ public class Game implements iGame {
         System.out.println("    STARTING CARD: " + deck.getDiscard().getLast());
         System.out.println(">>DISCARD pile size: " + deck.getDiscard().size() + " " +
                 "||  >>DRAW pile size: " + deck.getCards().size() + "");
-        System.out.print("   ---------------------------\n");
+        System.out.print("   ---------------------------\n\n");
     }
 
     ////////////////Getters & Setters ///////////
 
     public Deck getDeck() {
+        return deck;
+    }
+
+    @Override
+    public IDeck getDeckInfo() {
         return deck;
     }
 
@@ -193,6 +210,40 @@ public class Game implements iGame {
 
     public List<Player> getPlayer() {
         return players;
+    }
+
+
+    ///////playerInfo
+    @Override
+    public List<IPlayerInfo> getPlayerInfo() {
+        return new ArrayList<>(players);
+    }
+
+    @Override
+    public IPlayer getNextPlayer() {
+        if (players.indexOf(currentPlayer) == players.size() - 1) {
+            return players.get(0);
+        } else {
+            return players.get(players.indexOf(currentPlayer) + 1);
+        }
+    }
+
+    @Override
+    public IPlayer getPreviousPlayer() {
+        if (players.indexOf(currentPlayer) == 0) {
+            return players.get(players.size() - 1);
+        } else {
+            return players.get(players.indexOf(currentPlayer) - 1);
+        }
+    }
+
+    @Override
+    public IPlayer getNextNextPlayer() {
+        if (players.indexOf(currentPlayer) == players.size() - 2) {
+            return players.get(0);
+        } else {
+            return players.get(players.indexOf(currentPlayer) + 2);
+        }
     }
 
 

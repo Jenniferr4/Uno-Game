@@ -2,8 +2,9 @@ package com.improving;
 
 import java.util.LinkedList;
 
-public interface iDeck {
+public interface IDeck {
     LinkedList<Card> getDiscard();
 
     int getDiscardPileSize();
+
 }

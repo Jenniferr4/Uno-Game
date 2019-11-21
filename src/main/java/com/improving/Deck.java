@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
-public class Deck implements iDeck {
+public class Deck implements IDeck {
     private final LinkedList<Card> cards = new LinkedList<>();
     private final LinkedList<Card> discard = new LinkedList<>();
     private final Random random = new Random();
